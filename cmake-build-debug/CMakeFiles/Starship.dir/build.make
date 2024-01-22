@@ -69,24 +69,10 @@ include CMakeFiles/Starship.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Starship.dir/flags.make
 
-CMakeFiles/Starship.dir/Client.c.o: CMakeFiles/Starship.dir/flags.make
-CMakeFiles/Starship.dir/Client.c.o: ../Client.c
-CMakeFiles/Starship.dir/Client.c.o: CMakeFiles/Starship.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/1lomi/OneDrive/Università/Reti di Calcolatori/Starship/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Starship.dir/Client.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Starship.dir/Client.c.o -MF CMakeFiles/Starship.dir/Client.c.o.d -o CMakeFiles/Starship.dir/Client.c.o -c "/mnt/c/Users/1lomi/OneDrive/Università/Reti di Calcolatori/Starship/Client.c"
-
-CMakeFiles/Starship.dir/Client.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Starship.dir/Client.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/mnt/c/Users/1lomi/OneDrive/Università/Reti di Calcolatori/Starship/Client.c" > CMakeFiles/Starship.dir/Client.c.i
-
-CMakeFiles/Starship.dir/Client.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Starship.dir/Client.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/mnt/c/Users/1lomi/OneDrive/Università/Reti di Calcolatori/Starship/Client.c" -o CMakeFiles/Starship.dir/Client.c.s
-
 CMakeFiles/Starship.dir/Server.c.o: CMakeFiles/Starship.dir/flags.make
 CMakeFiles/Starship.dir/Server.c.o: ../Server.c
 CMakeFiles/Starship.dir/Server.c.o: CMakeFiles/Starship.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/1lomi/OneDrive/Università/Reti di Calcolatori/Starship/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Starship.dir/Server.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/1lomi/OneDrive/Università/Reti di Calcolatori/Starship/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Starship.dir/Server.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Starship.dir/Server.c.o -MF CMakeFiles/Starship.dir/Server.c.o.d -o CMakeFiles/Starship.dir/Server.c.o -c "/mnt/c/Users/1lomi/OneDrive/Università/Reti di Calcolatori/Starship/Server.c"
 
 CMakeFiles/Starship.dir/Server.c.i: cmake_force
@@ -97,16 +83,30 @@ CMakeFiles/Starship.dir/Server.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Starship.dir/Server.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/mnt/c/Users/1lomi/OneDrive/Università/Reti di Calcolatori/Starship/Server.c" -o CMakeFiles/Starship.dir/Server.c.s
 
+CMakeFiles/Starship.dir/Client.c.o: CMakeFiles/Starship.dir/flags.make
+CMakeFiles/Starship.dir/Client.c.o: ../Client.c
+CMakeFiles/Starship.dir/Client.c.o: CMakeFiles/Starship.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/1lomi/OneDrive/Università/Reti di Calcolatori/Starship/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Starship.dir/Client.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Starship.dir/Client.c.o -MF CMakeFiles/Starship.dir/Client.c.o.d -o CMakeFiles/Starship.dir/Client.c.o -c "/mnt/c/Users/1lomi/OneDrive/Università/Reti di Calcolatori/Starship/Client.c"
+
+CMakeFiles/Starship.dir/Client.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Starship.dir/Client.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/mnt/c/Users/1lomi/OneDrive/Università/Reti di Calcolatori/Starship/Client.c" > CMakeFiles/Starship.dir/Client.c.i
+
+CMakeFiles/Starship.dir/Client.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Starship.dir/Client.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/mnt/c/Users/1lomi/OneDrive/Università/Reti di Calcolatori/Starship/Client.c" -o CMakeFiles/Starship.dir/Client.c.s
+
 # Object files for target Starship
 Starship_OBJECTS = \
-"CMakeFiles/Starship.dir/Client.c.o" \
-"CMakeFiles/Starship.dir/Server.c.o"
+"CMakeFiles/Starship.dir/Server.c.o" \
+"CMakeFiles/Starship.dir/Client.c.o"
 
 # External object files for target Starship
 Starship_EXTERNAL_OBJECTS =
 
-Starship: CMakeFiles/Starship.dir/Client.c.o
 Starship: CMakeFiles/Starship.dir/Server.c.o
+Starship: CMakeFiles/Starship.dir/Client.c.o
 Starship: CMakeFiles/Starship.dir/build.make
 Starship: CMakeFiles/Starship.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/mnt/c/Users/1lomi/OneDrive/Università/Reti di Calcolatori/Starship/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable Starship"

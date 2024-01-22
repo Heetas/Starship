@@ -1,50 +1,55 @@
 // Server.c
 #include "header.h"
 
-int main(int argc, char **argv)
-{
-    int sockfd;
-    struct sockaddr_in servaddr, cliaddr;
-    ssize_t n;
-    socklen_t len;
-    char mesg[MAXLINE], line[MAXLINE];
+int main(int argc, char **argv) {
+
+    // Dichiarazione delle strutture dati per gli indirizzi del server e del client
+    struct sockaddr_in server_addr, client_addr;
+
+    // Buffer per la ricezione e messaggio da inviare
+    char buffer[MAX_LINE + 1];
+    char msg[MAX_LINE];
 
     // Creazione del socket
-    if ((sockfd = socket(AF_INET, SOCK_DGRAM, 0)) < 0) {
-        perror("socket error");
-        exit(1);
-    }
+    int sockfd = Socket();
+    printf("Socket creato con successo.\n");
+
+    // Modifica delle impostazioni del socket per riutilizzare l'indirizzo
+    Reusaddr(sockfd);
+    printf("Impostazioni socket modificate con successo.\n");
 
     // Inizializzazione della struttura dati per l'indirizzo del server
-    memset(&servaddr, 0, sizeof(servaddr));
-    servaddr.sin_family = AF_INET;
-    servaddr.sin_addr.s_addr = htonl(INADDR_ANY);
-    servaddr.sin_port = htons(1024);
+    server_addr.sin_family = AF_INET;
+    server_addr.sin_addr.s_addr = htonl(INADDR_ANY);
+    server_addr.sin_port = htons(PORT);
 
     // Associazione dell'indirizzo al socket
-    if (bind(sockfd, (struct sockaddr *) &servaddr, sizeof(servaddr)) < 0) {
-        perror("bind error");
-        exit(1);
-    }
+    Bind(sockfd, server_addr);
+    printf("Bind alla porta avvenuto con successo.\n\n");
 
-    // Ciclo infinito di ricezione dei messaggi dai client e invio delle risposte
+    // Inizializzazione del generatore di numeri casuali
+    srand(time(NULL));
+
+    // Ciclo infinito di generazione dei detriti e invio degli alert
     for (;;) {
-        len = sizeof(cliaddr);
+        printf("Server in attesa...\n");
 
-        // Ricezione del messaggio dal client
-        n = recvfrom(sockfd, mesg, MAXLINE, 0, (struct sockaddr *) &cliaddr, &len);
-        n--;
+        // Ricezione dei dati dal client
+        ssize_t n = Ricevi(sockfd, buffer, &client_addr);
+        if (n > 0)
+            printf("Ricezione avvenuta con successo:\n%zd", n);
 
-        // Stampa dell'indirizzo del client e del messaggio ricevuto
-        printf("Received request from %s\n", inet_ntop(AF_INET, &cliaddr.sin_addr, line, sizeof(line)));
-        mesg[n] = '\0';
-        printf("Received %zd bytes: %s\n", n, mesg);
+        // Generazione casuale della posizione dei detriti
+        int debris_x = rand() % GRID;
+        int debris_y = rand() % GRID;
 
-        // Creazione della risposta
-        char str[100];
-        sprintf(str, "Received %zd characters\n", n);
+        // Creazione dell'alert con la posizione dei detriti
+        sprintf(msg, "ASTEROIDE IN ARRIVO IN %dx %dy", debris_x, debris_y);
 
-        // Invio della risposta al client
-        sendto(sockfd, str, strlen(str), 0, (struct sockaddr *) &cliaddr, sizeof(cliaddr));
+        // Invio dell'alert al client
+        Spedisci(sockfd, msg, client_addr);
+
+        // Attesa di 2 secondi prima di generare nuovi detriti
+        sleep(2);
     }
 }

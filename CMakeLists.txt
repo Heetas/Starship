@@ -3,7 +3,4 @@ project(Starship C)
 
 set(CMAKE_C_STANDARD 23)
 
-add_executable(Starship
-        Client.c
-        Server.c
-        header.h)
+add_executable(Starship Server.c Client.c header.h)
