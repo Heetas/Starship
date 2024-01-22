@@ -8,7 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/mnt/c/Users/1lomi/OneDrive/Università/Reti di Calcolatori/Starship/main.c" "CMakeFiles/Starship.dir/main.c.o" "gcc" "CMakeFiles/Starship.dir/main.c.o.d"
+  "/mnt/c/Users/1lomi/OneDrive/Università/Reti di Calcolatori/Starship/Client.c" "CMakeFiles/Starship.dir/Client.c.o" "gcc" "CMakeFiles/Starship.dir/Client.c.o.d"
+  "/mnt/c/Users/1lomi/OneDrive/Università/Reti di Calcolatori/Starship/Server.c" "CMakeFiles/Starship.dir/Server.c.o" "gcc" "CMakeFiles/Starship.dir/Server.c.o.d"
   )
 
 # Targets to which this target links.

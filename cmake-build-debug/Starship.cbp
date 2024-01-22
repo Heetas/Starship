@@ -76,7 +76,13 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/mnt/c/Users/1lomi/OneDrive/Università/Reti di Calcolatori/Starship/main.c">
+		<Unit filename="/mnt/c/Users/1lomi/OneDrive/Università/Reti di Calcolatori/Starship/Client.c">
+			<Option target="Starship"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/1lomi/OneDrive/Università/Reti di Calcolatori/Starship/Server.c">
+			<Option target="Starship"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/1lomi/OneDrive/Università/Reti di Calcolatori/Starship/header.h">
 			<Option target="Starship"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/1lomi/OneDrive/Università/Reti di Calcolatori/Starship/CMakeLists.txt">

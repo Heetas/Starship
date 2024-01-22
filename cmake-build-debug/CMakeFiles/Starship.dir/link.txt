@@ -1,1 +1,1 @@
-/usr/bin/cc -g CMakeFiles/Starship.dir/main.c.o -o Starship 
+/usr/bin/cc -g CMakeFiles/Starship.dir/Client.c.o CMakeFiles/Starship.dir/Server.c.o -o Starship 

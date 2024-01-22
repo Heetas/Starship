@@ -1,7 +1,4 @@
 C:\Windows\system32\wsl.exe --distribution Ubuntu --exec /bin/bash -c "export CMAKE_COLOR_DIAGNOSTICS=ON && export CLION_IDE=TRUE && export JETBRAINS_IDE=TRUE && cd '/mnt/c/Users/1lomi/OneDrive/Università/Reti di Calcolatori/Starship/cmake-build-debug' && /usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G 'CodeBlocks - Unix Makefiles' -S '/mnt/c/Users/1lomi/OneDrive/Università/Reti di Calcolatori/Starship' -B '/mnt/c/Users/1lomi/OneDrive/Università/Reti di Calcolatori/Starship/cmake-build-debug'"
 -- Configuring done
-CMake Error at CMakeLists.txt:6 (add_executable):
-  No SOURCES given to target: Starship
-
-
-CMake Generate step failed.  Build files cannot be regenerated correctly.
+-- Generating done
+-- Build files have been written to: /mnt/c/Users/1lomi/OneDrive/Università/Reti di Calcolatori/Starship/cmake-build-debug

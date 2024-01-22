@@ -129,29 +129,53 @@ Starship/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Starship.dir/build.make CMakeFiles/Starship.dir/build
 .PHONY : Starship/fast
 
-main.o: main.c.o
-.PHONY : main.o
+Client.o: Client.c.o
+.PHONY : Client.o
 
 # target to build an object file
-main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Starship.dir/build.make CMakeFiles/Starship.dir/main.c.o
-.PHONY : main.c.o
+Client.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Starship.dir/build.make CMakeFiles/Starship.dir/Client.c.o
+.PHONY : Client.c.o
 
-main.i: main.c.i
-.PHONY : main.i
+Client.i: Client.c.i
+.PHONY : Client.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Starship.dir/build.make CMakeFiles/Starship.dir/main.c.i
-.PHONY : main.c.i
+Client.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Starship.dir/build.make CMakeFiles/Starship.dir/Client.c.i
+.PHONY : Client.c.i
 
-main.s: main.c.s
-.PHONY : main.s
+Client.s: Client.c.s
+.PHONY : Client.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Starship.dir/build.make CMakeFiles/Starship.dir/main.c.s
-.PHONY : main.c.s
+Client.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Starship.dir/build.make CMakeFiles/Starship.dir/Client.c.s
+.PHONY : Client.c.s
+
+Server.o: Server.c.o
+.PHONY : Server.o
+
+# target to build an object file
+Server.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Starship.dir/build.make CMakeFiles/Starship.dir/Server.c.o
+.PHONY : Server.c.o
+
+Server.i: Server.c.i
+.PHONY : Server.i
+
+# target to preprocess a source file
+Server.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Starship.dir/build.make CMakeFiles/Starship.dir/Server.c.i
+.PHONY : Server.c.i
+
+Server.s: Server.c.s
+.PHONY : Server.s
+
+# target to generate assembly for a file
+Server.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Starship.dir/build.make CMakeFiles/Starship.dir/Server.c.s
+.PHONY : Server.c.s
 
 # Help Target
 help:
@@ -162,9 +186,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Starship"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... Client.o"
+	@echo "... Client.i"
+	@echo "... Client.s"
+	@echo "... Server.o"
+	@echo "... Server.i"
+	@echo "... Server.s"
 .PHONY : help
 
 
