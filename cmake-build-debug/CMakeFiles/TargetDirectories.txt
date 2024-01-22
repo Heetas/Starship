@@ -1,0 +1,3 @@
+/mnt/c/Users/1lomi/OneDrive/Università/Reti di Calcolatori/Starship/cmake-build-debug/CMakeFiles/Starship.dir
+/mnt/c/Users/1lomi/OneDrive/Università/Reti di Calcolatori/Starship/cmake-build-debug/CMakeFiles/edit_cache.dir
+/mnt/c/Users/1lomi/OneDrive/Università/Reti di Calcolatori/Starship/cmake-build-debug/CMakeFiles/rebuild_cache.dir
