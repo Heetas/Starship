@@ -19,8 +19,8 @@
 #define MAX_ASTEROIDS 3
 #define MAX_LINE 4096
 #define PORT 1024
-#define TIMER 5
-#define clear() printf("\033[H\033[J")
+#define TIMER 2
+#define clear() system("clear")
 
 int turn = 1;
 

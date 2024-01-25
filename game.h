@@ -82,6 +82,9 @@ void *RicezioneAsteroidi(void *arg) {
                 dati->debris_y[i] = atoi(token);
             }
         }
+
+        clear();
+        printf("TURNO N.%d\nEVITA GLI ASTEROIDI CON W-A-S-D!\n", turn);
         printGrid(dati->ship_x, dati->ship_y, dati->debris_x, dati->debris_y, MAX_ASTEROIDS);
 
         for (int i = 0; i < MAX_ASTEROIDS; i++) {
@@ -101,6 +104,7 @@ void *RicezioneAsteroidi(void *arg) {
                 collision_detected = 0;
             }
         }
+        turn++;
         printf("\n");
         sleep(TIMER);
     }

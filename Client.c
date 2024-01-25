@@ -22,10 +22,6 @@ int main(int argc, char **argv) {
 
     ssize_t outcome = Ricevi(sockfd, buffer, &server_addr);
     if (outcome > 0) {
-        printf("INIZIO GIOCO.\nEVITA GLI ASTEROIDI!\n\n");
-
-        int debris_x[MAX_ASTEROIDS];
-        int debris_y[MAX_ASTEROIDS];
 
         pthread_t input_tid, receive_tid;
         thread_data_t thread_data = {sockfd, server_addr, ship_x, ship_y, {0}, {0}};
