@@ -1,21 +1,7 @@
-#ifndef STARSHIP_HEADER
-#define STARSHIP_HEADER
-
-// Definizione di costanti
-#define MAX_LINE 4096
-#define PORT 1024
-#define GRID 10
-
-// Inclusione delle librerie necessarie
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <sys/types.h>
-#include <sys/socket.h>
-#include <arpa/inet.h>
-#include <errno.h>
-#include <time.h>
+// network.h
+#include "lib.h"
+#ifndef STARSHIP_NETWORK_H
+#define STARSHIP_NETWORK_H
 
 // Funzione per gestire gli errori e terminare il programma
 void error(const char *msg) {
@@ -55,20 +41,17 @@ void IP_Conversion(const char *ip, struct sockaddr_in *addr) {
 }
 
 // Funzione per la spedizione dei dati tramite socket
-void Spedisci(int sockfd, const char *data, struct sockaddr_in addr) {
-    if (sendto(sockfd, data, strlen(data), 0, (struct sockaddr *) &addr, sizeof(addr)) < 0) {
-        error("Errore durante la spedizione");
-    }
+ssize_t Spedisci(int sockfd, const char *data, struct sockaddr_in addr) {
+    ssize_t n = sendto(sockfd, data, strlen(data), 0, (struct sockaddr *) &addr, sizeof(addr));
+    return n;
 }
 
 // Funzione per la ricezione dei dati tramite socket
 ssize_t Ricevi(int sockfd, char *buffer, struct sockaddr_in *addr) {
     socklen_t len = sizeof(*addr);
     ssize_t n = recvfrom(sockfd, buffer, MAX_LINE, 0, (struct sockaddr *) addr, &len);
-    if (n < 0) {
-        error("Errore durante la ricezione");
-    }
+    if (n > 0) buffer[n] = '\0';
     return n;
 }
 
-#endif //STARSHIP_HEADER
+#endif //STARSHIP_NETWORK_H

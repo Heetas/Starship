@@ -82,7 +82,13 @@
 		<Unit filename="/mnt/c/Users/1lomi/OneDrive/Università/Reti di Calcolatori/Starship/Server.c">
 			<Option target="Starship"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/1lomi/OneDrive/Università/Reti di Calcolatori/Starship/header.h">
+		<Unit filename="/mnt/c/Users/1lomi/OneDrive/Università/Reti di Calcolatori/Starship/game.h">
+			<Option target="Starship"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/1lomi/OneDrive/Università/Reti di Calcolatori/Starship/lib.h">
+			<Option target="Starship"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/1lomi/OneDrive/Università/Reti di Calcolatori/Starship/network.h">
 			<Option target="Starship"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/1lomi/OneDrive/Università/Reti di Calcolatori/Starship/CMakeLists.txt">

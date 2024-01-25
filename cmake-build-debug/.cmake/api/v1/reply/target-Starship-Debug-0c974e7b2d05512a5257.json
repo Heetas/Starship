@@ -94,7 +94,9 @@
 			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
-				2
+				2,
+				3,
+				4
 			]
 		}
 	],
@@ -114,7 +116,17 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "header.h",
+			"path" : "lib.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "network.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "game.h",
 			"sourceGroupIndex" : 1
 		}
 	],
