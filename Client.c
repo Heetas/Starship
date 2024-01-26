@@ -24,7 +24,7 @@ int main(int argc, char **argv) {
     if (outcome > 0) {
 
         pthread_t input_tid, receive_tid;
-        thread_data_t thread_data = {sockfd, server_addr, ship_x, ship_y, {0}, {0}};
+        grid_info thread_data = {sockfd, server_addr, ship_x, ship_y, {0}, {0}};
         pthread_create(&input_tid, NULL, MuoviNavicella, &thread_data);
         pthread_create(&receive_tid, NULL, RicezioneAsteroidi, &thread_data);
 

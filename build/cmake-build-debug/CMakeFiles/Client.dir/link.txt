@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/Client.dir/mnt/c/Users/1lomi/OneDrive/Università/Reti_di_Calcolatori/Starship/Client.c.o -o Client 

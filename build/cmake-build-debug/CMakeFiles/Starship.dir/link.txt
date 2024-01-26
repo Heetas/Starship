@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/Starship.dir/mnt/c/Users/1lomi/OneDrive/Università/Reti_di_Calcolatori/Starship/Server.c.o CMakeFiles/Starship.dir/mnt/c/Users/1lomi/OneDrive/Università/Reti_di_Calcolatori/Starship/Client.c.o -o Starship 

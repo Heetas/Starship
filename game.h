@@ -6,6 +6,8 @@
 
 // Funzione per la stampa della griglia
 void printGrid(int ship_x, int ship_y, int debris_x[], int debris_y[], int n) {
+    clear();
+    printf("BENVENUTO NEL GIOCO STARSHIP!\nEVITA GLI ASTEROIDI CON W-A-S-D.\n");
     for (int i = 0; i < GRID; i++) {
         for (int j = 0; j < GRID; j++) {
             if (j == ship_x && i == ship_y) {
@@ -31,7 +33,7 @@ void printGrid(int ship_x, int ship_y, int debris_x[], int debris_y[], int n) {
 
 // Funzione eseguita dal thread di input dell'utente
 void *MuoviNavicella(void *arg) {
-    thread_data_t *navicella = (thread_data_t *) arg;
+    grid_info *navicella = (grid_info *) arg;
 
     while (1) {
         char input;
@@ -61,12 +63,13 @@ void *MuoviNavicella(void *arg) {
                 printf("INPUT INVALIDO\n");
                 break;
         }
+        printGrid(navicella->ship_x, navicella->ship_y, navicella->debris_x, navicella->debris_y, MAX_ASTEROIDS);
     }
 }
 
 // Funzione eseguita dal thread di ricezione dei dati
 void *RicezioneAsteroidi(void *arg) {
-    thread_data_t *dati = (thread_data_t *) arg;
+    grid_info *dati = (grid_info *) arg;
     char buffer[MAX_LINE + 1];
     int collision_detected;
 
@@ -83,12 +86,9 @@ void *RicezioneAsteroidi(void *arg) {
             }
         }
 
-        clear();
-        printf("TURNO N.%d\nEVITA GLI ASTEROIDI CON W-A-S-D!\n", turn);
         printGrid(dati->ship_x, dati->ship_y, dati->debris_x, dati->debris_y, MAX_ASTEROIDS);
 
         for (int i = 0; i < MAX_ASTEROIDS; i++) {
-            printf("COORDINATE ASTEROIDI: [%d : %d]\n", dati->debris_x[i], dati->debris_y[i]);
 
             // Se è stato precedentemente rilevato una collisione e la navicella non si è mossa, allora è game over
             if (collision_detected && dati->debris_x[i] == dati->ship_x && dati->debris_y[i] == dati->ship_y) {
@@ -98,13 +98,12 @@ void *RicezioneAsteroidi(void *arg) {
 
             // Controlliamo per un possibile impatto al prossimo ciclo
             if (dati->debris_x[i] == dati->ship_x && dati->debris_y[i] == dati->ship_y) {
-                printf("!!! ALERT ASTEROID AT YOUR LOCATION - MOVE NOW !!!\n");
+                printf("!!! ALLERTA ASTEROIDE NELLA TUA POSIZIONE !!!\n");
                 collision_detected = 1;
             } else {
                 collision_detected = 0;
             }
         }
-        turn++;
         printf("\n");
         sleep(TIMER);
     }

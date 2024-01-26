@@ -18,7 +18,7 @@ int main(int argc, char **argv) {
     Bind(sockfd, server_addr);
     srand(time(NULL));
 
-    printf("Server in attesa...\n");
+    printf("Server in attesa...\n\n");
     ssize_t n = Ricevi(sockfd, buffer, &client_addr);
     if (n > 0) {
         const char *outcome = "Connessione al server stabilita con successo.\n";

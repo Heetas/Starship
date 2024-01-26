@@ -16,7 +16,7 @@
 #include <unistd.h>
 
 #define GRID 9
-#define MAX_ASTEROIDS 3
+#define MAX_ASTEROIDS 15
 #define MAX_LINE 4096
 #define PORT 1024
 #define TIMER 2
@@ -31,6 +31,6 @@ typedef struct {
     int ship_y;
     int debris_x[MAX_ASTEROIDS];
     int debris_y[MAX_ASTEROIDS];
-} thread_data_t;
+} grid_info;
 
 #endif //STARSHIP_HEADER

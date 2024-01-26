@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/Server.dir/mnt/c/Users/1lomi/OneDrive/Università/Reti_di_Calcolatori/Starship/Server.c.o -o Server 
