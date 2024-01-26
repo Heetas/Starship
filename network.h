@@ -25,14 +25,6 @@ void Bind(int sockfd, struct sockaddr_in servaddr) {
     }
 }
 
-// Funzione per modificare le impostazioni del socket e riutilizzare l'indirizzo
-void Reusaddr(int sockfd) {
-    int enable = 1;
-    if (setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR, &enable, sizeof(int)) < 0) {
-        error("Errore durante la modifica delle impostazioni del sock");
-    }
-}
-
 // Funzione per la conversione dell'indirizzo IP
 void IP_Conversion(const char *ip, struct sockaddr_in *addr) {
     if (inet_pton(AF_INET, ip, &(addr->sin_addr)) <= 0) {
@@ -47,10 +39,10 @@ ssize_t Spedisci(int sockfd, const char *data, struct sockaddr_in addr) {
 }
 
 // Funzione per la ricezione dei dati tramite socket
-ssize_t Ricevi(int sockfd, char *buffer, struct sockaddr_in *addr) {
+ssize_t Ricevi(int sockfd, char *buf, struct sockaddr_in *addr) {
     socklen_t len = sizeof(*addr);
-    ssize_t n = recvfrom(sockfd, buffer, MAX_LINE, 0, (struct sockaddr *) addr, &len);
-    if (n > 0) buffer[n] = '\0';
+    ssize_t n = recvfrom(sockfd, buf, MAX_LINE, 0, (struct sockaddr *) addr, &len);
+    if (n > 0) buf[n] = '\0';
     return n;
 }
 

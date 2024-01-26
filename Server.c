@@ -3,13 +3,8 @@
 #include "network.h"
 #include "game.h"
 int main(int argc, char **argv) {
-
-    struct sockaddr_in server_addr, client_addr;
     char msg[MAX_LINE];
-    char buffer[MAX_LINE + 1];
-
     int sockfd = Socket();
-    Reusaddr(sockfd);
 
     server_addr.sin_family = AF_INET;
     server_addr.sin_addr.s_addr = htonl(INADDR_ANY);
@@ -35,8 +30,8 @@ int main(int argc, char **argv) {
                 Spedisci(sockfd, msg, client_addr);
             }
             turn++;
-            printf("\n");
             sleep(TIMER);
+            clear();
         }
     }
 }
