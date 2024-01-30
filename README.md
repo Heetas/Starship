@@ -11,3 +11,5 @@ Traccia: Una navicella spaziale deve evitare i detriti provenienti da una tempes
 La navicella (client) entra nel settore spaziale dei meteoriti (server) connettendosi in UDP.
 La tempesta di meteoriti genera in modo casuale _n_ pacchetti UDP ogni 2 secondi che rappresentano i detriti in una griglia _M×M_.
 La navicella riceve un alert nel caso in cui il detrito spaziale si trovi sulla sua stessa posizione e può spostarsi prima dell'impatto.
+
+Documentazione: https://lomi02.github.io/Starship/
