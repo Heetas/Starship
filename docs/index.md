@@ -56,7 +56,9 @@ Il protocollo User Datagram (UDP) è uno dei protocolli di comunicazione fondame
 
 ## Logica di Connessione
 
-Come menzionato in precedenza, il server prima di cominciare a creare asteroidi e mandarli al client, ma prima un piccolo Handshake con il client per indirizzare correttamente i dati. Ecco com'è stato implementato l'Handshake:
+Come menzionato in precedenza, il lavoro del server è di creare asteroidi e mandarli al client. 
+
+Nel mio codice ho implementato un piccolo Handshake artificiale per indirizzare correttamente i dati e sincronizzare al meglio l'aggiornamento dei turni con l'arrivo dei dati dal server. Ecco com'è stato implementato l'Handshake:
 
 Client.c
 ```c
@@ -119,7 +121,7 @@ L'Handshake consiste quindi in:
 
 ## Logica di Gioco
 
-Come detto prima, il Server.c crea asteroidi e li manda al client ogni due secondi. Il Client.c invece riceve gli asteroidi e avvia il gioco.
+Come detto prima, il Server.c crea asteroidi e li manda al client ogni due secondi. Il Client.c invece riceve gli asteroidi e consente le operazioni di gioco.
 
 Ecco come è stato implementato con relativi commenti per facilitare la comprensione.
 
@@ -491,12 +493,12 @@ Il gioco permette libero movimento all'interno della griglia, e per aumentare la
 
 Per giocare al gioco Starship bisogna buildare con CMake gli eseguibili "Server" e "Client", e poi eseguire in ordine cronologico i due seguenti codici in un terminale UNIX.
 
-Posizione build del Server partendo dalla cartella progetto di Starship:
+Eseguire la build del Server partendo dalla directory del progetto Starship:
 ``` bash
 ./build/cmake-build-debug/Server 127.0.0.1
 ```
 
-Posizione build del Client partendo dalla cartella progetto di Starship:
+Eseguire la build del Client partendo dalla directory del progetto Starship:
 ``` bash
 ./build/cmake-build-debug/Client 127.0.0.1
 ``` 
